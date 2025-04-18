@@ -1,15 +1,14 @@
 package cfg
 
 import (
-	"AvitoFlats/cfg"
 	"context"
 	"fmt"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-func NewClient(cfg *cfg.Config) (*pgxpool.Pool, error) {
-	dsn := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable",
+func NewClient(cfg *Config) (*pgxpool.Pool, error) {
+	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=disable",
 		cfg.DB.User,
 		cfg.DB.DBPassword,
 		cfg.DB.DBHost,

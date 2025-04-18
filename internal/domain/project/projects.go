@@ -1,4 +1,4 @@
-package projects
+package domain
 
 import (
 	"fmt"
@@ -33,4 +33,14 @@ func NewProject(name, description string) (*Project, error) {
 		CreatedAt:   time.Now(),
 		UpdatedAt:   time.Now(),
 	}, nil
+}
+
+func (p *Project) Update(name, description string) error {
+	if name == "" {
+		return fmt.Errorf("project name cannot be empty")
+	}
+	p.Name = name
+	p.Description = description
+	p.UpdatedAt = time.Now()
+	return nil
 }

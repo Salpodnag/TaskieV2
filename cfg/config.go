@@ -14,7 +14,7 @@ type Config struct {
 }
 
 type Database struct {
-	DBPort     int    `env:"DB_PORT"`
+	DBPort     string `env:"DB_PORT"`
 	DBHost     string `env:"DB_HOST"`
 	DBName     string `env:"DB_NAME"`
 	User       string `env:"DB_USER"`
@@ -22,7 +22,7 @@ type Database struct {
 }
 
 type Server struct {
-	ServerPort int `env:"SERVER_PORT"`
+	ServerPort string `env:"SERVER_PORT"`
 }
 
 type JWT struct {
